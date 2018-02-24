@@ -1,121 +1,39 @@
 ---
-title: About Hugo XMag
-author: Yihui Xie
+title: 关于“稳多点”
+author: 
+ - 冯羽
+ - 钟小小
 ---
 
-**XMag** is the second Hugo theme I have designed. It is based on my first Hugo theme [**XMin**](https://github.com/yihui/hugo-xmin), and similarly, features minimalism but with a magazine style on the homepage inspired by [The Signpost](https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost) on Wikipedia. You can find its source code on Github: https://github.com/yihui/hugo-xmag (licensed under MIT).
+**稳多点**是一句粤语。常见于过年期间，大家庭聚会时，长辈对晚辈的寄语。“稳多点”下一句就是:“你稳多点钱，我才有的食”，这是粤语中鼓励他人一种幽默的说法。作为外省人，我很是受用，因为我从来没有稳多点。我也常常思考，为什么就“稳不到钱”呢？都说外省人吃苦耐劳，我也不差，何以“稳不到钱”呢？恐怕要归于不懂人情世故罢！
 
-# Features
+**稳多点**的网站风格来自[**谢益辉**](https://github.com/yihui/hugo-xmag)，大概用过R语言的人都认识谢益辉，我很喜欢他的极简哲学。建站工具是blogdown，也是谢益辉及其他同仁开发的，绑定了 git和hugo。只要一次部署完毕，剩下的就是码字了。
 
-This theme includes a few cool features:
+我原本想用[**hugo-ivy**](https://github.com/yihui/hugo-ivy)，也是谢益辉开发的，极简又不失国际范儿。但我想我的中文读者估计没几个，国际友人就更没几个了。而且我又没那么多内容来支撑这种极简框架，所以最终还是选用了谢益辉这个“泰晤士时报”的网站风格。**&Tfr;&Ifr;&Mfr;&Efr;&Sfr; &Gfr;&Ufr;&Afr;&Nfr;&Gfr;&Zfr;&Hfr;&Ofr;&Ufr;**实际上是无厘头的没什么意义的说法，这字体不常见，只是增加点好玩的神秘感罢。
 
-- Responsive article summary blocks on homepage
+钟小小是这个网站的另外一位开发者，也是我的夫人。游转于油米柴盐和带娃之中，深知生活不易，是除长辈之外鼓励我**稳多点**的同辈中人。我因缺乏人情世故天赋，经友好协商，特将首席市场官CMO授予钟小小，本网站的商业化运作就拜托她了。
 
-- Thumbnails in summary blocks
+本网站其他 C?O 一律对外开放申请。欢迎蓝色星球每个角落的优秀人才赶紧来“占坑”。一点点的要求如下：
 
-- Magazine title in Blackletter (&Bfr;&Lfr;&Afr;&Cfr;&Kfr; &Lfr;&Efr;&Tfr;&Tfr;&Efr;&Rfr;)
+CAO（Chief Art Officer：首席艺术官），目前网站虽然极简，但不够美，所以需要一点美，欢迎毛遂自荐。
 
-- Github edit links
+CTO首席技术官，暂时没要求，欢迎毛遂自荐。
 
-- Author info and site info at the bottom of an article
+CEO首席执行官，维持网站开发者的合作和利益分配，就靠你了，欢迎毛遂自荐。
 
-- Multiple authors of a single page
+CFO首席财务官，目前我们没有任何经济来源，就靠你了，欢迎毛遂自荐。
 
-- MathJax for LaTeX math expressions
+CKO首席知识官，网站内容的充实，就靠你了，欢迎毛遂自荐。
 
-It also supports features that are probably not even worth mentioning:
+CHO人力资源总监，我们将没有名义上的雇员，也不会有统一的价值标准（如果有的话，只能是**稳多点**），无KPI，无员工手册，这些都是挑战，欢迎毛遂自荐。
 
-- Google Analytics
+# 关于网站内容
 
-- highlight.js for syntax highlighting of code blocks
+各C？O未到位之前，我会做一些网站内容。预告如下：
 
-- Display categories and tags on single pages
+- Rstudio 这家公司为何如此重要？
+- 那些我们熟悉的开挂的 R语言开发者
+- R语言的优势和劣势
+- 油米柴盐若干事
+- 读书若干事
 
-- Table of contents for single pages
-
-Most features can be configured through `config.toml`, and a few can be enabled by custom layouts.
-
-# config.toml
-
-By default, your site title will be displayed at the top in Blackletter fonts if your web browser and operating system support Blackletter fonts. Essentially, for every English letter `X` in your site title, it is substituted with `&Xfr;`, e.g. the Blackletter version of `A` is `&Afr;` (&Afr;). Below are the letters from A to Z:
-
-## &Afr;&Bfr;&Cfr;&Dfr;&Efr;&Ffr;&Gfr;&Hfr;&Ifr;&Jfr;&Kfr;&Lfr;&Mfr;&Nfr;&Ofr;&Pfr;&Qfr;&Rfr;&Sfr;&Tfr;&Ufr;&Vfr;&Wfr;&Xfr;&Yfr;&Zfr;
-
-Alternatively, you can provide a banner image:
-
-```toml
-[params.banner]
-    src = "/path/to/banner.png"
-    alt = "alternative text on image"
-```
-
-By default, each summary block on the homepage contains the first 200 letters extracted from all paragraphs of an article. I find Hugo's built in `.Summary` often unsatisfactory (e.g. it may contain headings and code blocks, which really should not go to the summary), so I wrote my own version. It works much better and the size of most summary blocks will be the same, unless certain articles are really short. The length 200 can be customized via `params.summary_length`.
-
-If you are not satisfied with the automatic summary, you can specify the `description` option in the (YAML) metadata of your Markdown document, e.g.,
-
-```yaml
-title: "My Cool Post"
-description: "Please use this as the summary."
-```
-
-Each summary block may contain a thumbnail, which is the first image in an article if exists. You can override it by providing the `thumbnail` option in the meta data of your Markdown document, e.g.,
-
-```yaml
----
-title: "My Cool Post"
-thumbnail: "/url/of/the/image"
----
-```
-
-For each page, this theme adds an edit link to the top-right if a parameter `github_edit` is provided, so that your reader may easily help you edit a page and submit a pull request on Github.
-
-The page footer can be defined in `.Params.footer`, and the text is treated as Markdown. Below are some sample configurations:
-
-```toml
-[params]
-    summary_length = 200
-    github_edit = "https://github.com/yihui/hugo-xmag/edit/master/exampleSite/content/"
-    footer = "&copy; [Yihui Xie](https://yihui.name) 2017"
-```
-
-There are a few phrases that you can "translate" (I didn't use Hugo's multi-language feature just because I'm lazy):
-
-```toml
-[params.text]
-    about_author = "About the Author"
-    author_delimiter = ", "
-    back = "Back to Home"
-    edit = "Edit this page"
-    tags = "Tags: "
-    truncated = " &hellip;"
-    uncategorized = "Uncategorized"
-```
-
-You can define a data file under `data/` to store all authors information, e.g., you can use a TOML file `data/authors.toml` (or YAML/JSON):
-
-```
-"Alice Wonder" = "I'm Alice. More about me on [my homepage](http://example.com)."
-"Yihui Xie" = "Hey this is Yihui. You don't want to follow me on Twitter @xieyihui."
-```
-
-Then for an article with an author name that can be found in `data/authors.toml`, the author info will be added to the bottom of a page. For example, on this page, you can find information about me. You can change the phrase "About the Author" by changing the parameter `about_author` in `config.toml`.
-
-To add a table of contents to an article, you can add `toc: true` to the YAML metadata of the Markdown document.
-
-# Custom layouts
-
-Besides the custom layout^[If this is the first time you have heard about "customizing layouts", please read the Hugo documentation first: https://gohugo.io/themes/customizing/.] files `head_custom.html` and `foot_custom.html` supported in **XMin** (see [documentation](https://xmin.yihui.name/about/)), this theme added a few more layout files such as `banner.html`, `comments.html` and `info.html` under `layouts/partials/`. The first can be used to customize the banner. The second can be used to add a comment section, e.g., if you want to use Hugo's default Disqus template, just add this to `comments.html`:
-
-```
-{{ template "_internal/disqus.html" . }}
-```
-
-You can also append arbitrary text to each article through `info.html`. For example, you may declare copyrights or briefly introduce your site.
-
-There are other partial templates in this theme and I encourage you to read the source code to figure out what they do.
-
-# Final words
-
-I feel the world has become so noisy that I'm often at a loss when looking at a web page, because there are so many things to distract me. I was heavily influenced by the book [_Amusing Ourselves to Death_](https://en.wikipedia.org/wiki/Amusing_Ourselves_to_Death) after I read it in early 2017. From then on, I was hoping to design a theme for a website that gives articles the top priority. Everything else must give way to articles. That is why the navigation menu is at the bottom instead of in the conventional position (top or sidebar). There isn't much to do other than reading an article when you open a page. By the way, this is a pure plain-text theme. You can certainly add images if you want, but this theme itself contains zero binary files. Out of my [OCD](https://en.wikipedia.org/wiki/Obsessive%E2%80%93compulsive_disorder), I was just trying to push the limits of web design without using any images or JavaScript libraries (I'm a totally amateur).^[I used MathJax and highlight.js anyway in this theme because they are helpful.]
-
-I hope you can enjoy this theme. Again, the source code is [on Github](https://github.com/yihui/hugo-xmag). Happy hacking!

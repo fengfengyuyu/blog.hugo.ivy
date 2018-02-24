@@ -1,6 +1,7 @@
 ---
 title: Jeff Leek is the Uniformly Most Powerful Jeff
 author: Michael Hoffman
+description: "Please use this as the summary."
 date: '2015-07-23'
 categories:
   - Statistics
